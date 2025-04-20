@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { logout } from "@/lib/action/auth.action"
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { toast } from "sonner"
+import { logout } from "@/lib/action/auth.action";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface NavbarProps {
-  userName?: string
+  userName?: string;
 }
 
 const Navbar = ({ userName }: NavbarProps) => {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleLogout = async () => {
     try {
-      await logout()
-      toast.success("Logged out successfully")
-      router.push("/sign-in")
+      await logout();
+      toast.success("Logged out successfully");
+      router.push("/sign-in");
     } catch (error) {
-      console.error("Logout error:", error)
-      toast.error("Failed to log out")
+      console.error("Logout error:", error);
+      toast.error("Failed to log out");
     }
-  }
+  };
 
   return (
     <header className="w-full py-4 px-6 flex justify-between items-center border-b mb-5">
@@ -35,7 +35,12 @@ const Navbar = ({ userName }: NavbarProps) => {
 
       {userName ? (
         <div className="flex items-center gap-4">
-          <span className="text-sm font-medium">Hi, {userName}</span>
+          <span className="font-bold text-lg">
+            Hi,&nbsp;
+            <span className="bg-gradient-rainbow animate-gradient-animation">
+              {userName}
+            </span>
+          </span>
           <button
             onClick={handleLogout}
             className="text-sm px-4 py-2 bg-red-50 text-red-600 hover:bg-red-100 rounded-md transition-colors"
@@ -52,7 +57,7 @@ const Navbar = ({ userName }: NavbarProps) => {
         </Link>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

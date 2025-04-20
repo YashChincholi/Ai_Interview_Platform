@@ -238,7 +238,7 @@
   }
 
   .transcript-border {
-    @apply border-gradient p-0.5 rounded-2xl w-full;
+    @apply border-gradient p-0.5 rounded-2xl w-full mt-2;
 
     .transcript {
       @apply dark-gradient rounded-2xl  min-h-12 px-5 py-3 flex items-center justify-center;
@@ -262,7 +262,7 @@
   }
 
   .root-layout {
-    @apply flex mx-auto max-w-7xl flex-col gap-12 my-12 px-16 max-sm:px-4 max-sm:my-8;
+    @apply flex mx-auto max-w-7xl flex-col gap-5 my-5 px-16 max-sm:px-4 max-sm:my-8;
   }
 
   .card-cta {
@@ -293,6 +293,27 @@
     }
   }
 }
+
+
+@layer utilities {
+  .bg-gradient-rainbow {
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes gradientAnimation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-gradient-animation {
+    animation: gradientAnimation 5s ease infinite;
+  }
+}
+
+  
 
 @utility dark-gradient {
   @apply bg-gradient-to-b from-[#1A1C20] to-[#08090D];

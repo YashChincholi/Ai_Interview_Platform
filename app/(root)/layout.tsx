@@ -10,7 +10,7 @@ export default async function RootLayout({
   const user = await getCurrentUser();
 
   return (
-    <div className="min-h-screen flex flex-col root-layout">
+    <div className="flex flex-col root-layout">
       <Navbar userName={user?.name} />
       <main className="flex-1">{children}</main>
     </div>

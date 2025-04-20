@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { getCurrentUser } from "@/lib/action/auth.action";
+import { getCurrentUser } from "@/lib/actions/auth.action";
 import type { ReactNode } from "react";
 
 export default async function RootLayout({

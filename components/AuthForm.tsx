@@ -14,7 +14,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { signIn, signUp } from "@/lib/action/auth.action";
+import { signIn, signUp } from "@/lib/actions/auth.action";
 import { auth } from "@/firebase/client";
 
 type FormType = "sign-up" | "sign-in";
